@@ -32,8 +32,13 @@ if (any(grepl("^00LOCK.*", system(paste0("ls ", .libPaths()[1]), intern = TRUE))
 # to the model output folder. Otherwise, the run itself will again use the
 # default library set!
 
-# snapshot <- "/p/projects/rd3mod/R/libraries/snapshots/2020_03_10"
-# if(file.exists(snapshot)) {
-# cat("Set libPaths to",snapshot,"\n")
-# .libPaths(snapshot)
-# }
+# used for running the coupling
+# snapshot <- "/p/projects/rd3mod/R/libraries/snapshots/2020_11_10"
+# used for the first reporting
+# snapshot <- "/p/projects/rd3mod/R/libraries/snapshots/2020_11_19"
+# used for final reporting
+snapshot <- "/p/projects/rd3mod/R/libraries/snapshots/2021_03"
+if(file.exists(snapshot)) {
+  cat("Set libPaths to",snapshot,"\n")
+  .libPaths(snapshot)
+}
