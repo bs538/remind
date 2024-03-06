@@ -25,7 +25,10 @@ if(!exists("source_include")) {
 
 gdx      <- file.path(outputdir,gdx_name)
 gdx_ref  <- file.path(outputdir,gdx_ref_name)
-if (!file.exists(gdx_ref)) { gdx_ref <- NULL }
+# BS/OR hotfix: use actual reference gdx (as in GAMS) for price fixing in 2020, not policy cost reference gdx
+# policy cost reporting needs to be run separately afterwards
+if (!file.exists(gdx_ref)) { gdx_ref <- file.path(outputdir, "input_ref.gdx")}
+# if (!file.exists(gdx_ref)) { gdx_ref <- NULL }
 scenario <- getScenNames(outputdir)
 ###############################################################################
 # paths of the reporting files
